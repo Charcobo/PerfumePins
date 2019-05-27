@@ -8,7 +8,7 @@
 
 <table class="table">
     <tr th:each="pin : ${pins}">
-        <td><img th:attr="src=@{'/images/' + ${pin.getPinId()} + '.jpg'}" th:height="60"/></td>
+        <td width="70"><img th:attr="src=@{'/images/pins/' + ${pin.getPinId()} + '.jpg'}" th:height="60"/></td>
         <td th:text="${pin.getPinName()}"></td>
     </tr>
 </table>
