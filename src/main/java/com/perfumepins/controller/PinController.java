@@ -17,7 +17,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @Controller
-@RequestMapping("perfume/pin")
+@RequestMapping("perfume/rest/v1/pin")
 public class PinController {
     @Autowired
     private PinRepository pinRepository;

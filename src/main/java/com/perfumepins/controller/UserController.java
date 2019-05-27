@@ -16,7 +16,7 @@ import javax.validation.Valid;
 import java.util.*;
 
 @Controller
-@RequestMapping("perfume/user")
+@RequestMapping("perfume/rest/v1/user")
 public class UserController {
 
     @Autowired
