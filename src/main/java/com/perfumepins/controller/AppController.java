@@ -22,7 +22,7 @@ public class AppController {
     @Autowired
     UserRepository userRepository;
 
-    @GetMapping()
+    @GetMapping("")
     public String index(Model model) {
 
         String title = "Perfume Pins App";
