@@ -92,6 +92,14 @@ public class UserController {
 
     // PUT/PATCH - http://<hostname>/perfume/user/<userId>
     // Updates a user specified by userId
+    @DeleteMapping(value = "{userId}")
+    public @ResponseBody String deleteUser(
+            @PathVariable Integer userId) {
+        User user = userRepository.findById(userId).get();
+        String username = user.getUsername();
+        userRepository.delete(user);
+        return "User " + username + " deleted.";
+    }
 
     // DELETE - http://<hostname>/perfume/user/<userId>
     // Deletes a user specified by userId (Will need to clean up the cross table entries as well)
