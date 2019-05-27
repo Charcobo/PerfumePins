@@ -1,31 +1,25 @@
 package com.perfumepins.controller;
 
 import com.perfumepins.model.Pin;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-
 import com.perfumepins.model.User;
 import com.perfumepins.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
 @Controller
-@RequestMapping(path = "/perfume/user")
+@RequestMapping("perfume/user")
 public class UserController {
 
     @Autowired
     private UserRepository userRepository;
 
-//    @Autowired
-//    private UserXPinRepository userXPinRepository;
-
     // GET - http://<hostname>/perfume/user/
     // Returns a list of all users
     @GetMapping("/")
-    public @ResponseBody
-    Iterable<User> getAllUsers() {
+    public @ResponseBody Iterable<User> getAllUsers() {
         return userRepository.findAll();
     }
 

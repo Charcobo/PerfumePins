@@ -1,17 +1,18 @@
 package com.perfumepins.controller;
 
+import com.perfumepins.model.Pin;
 import com.perfumepins.model.User;
+import com.perfumepins.repository.PinRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import com.perfumepins.model.Pin;
-import com.perfumepins.repository.PinRepository;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Optional;
+import java.util.Set;
 
 @Controller
-@RequestMapping(path = "/perfume/pin")
+@RequestMapping("perfume/pin")
 public class PinController {
     @Autowired
     private PinRepository pinRepository;
