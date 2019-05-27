@@ -10,6 +10,7 @@ import com.perfumepins.model.User;
 import com.perfumepins.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -58,7 +59,15 @@ public class UserController {
     // Adds a user
     @PostMapping(value = "/add") //, consumes = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody String addUser(
-            @RequestBody @Valid User userData) {
+            @RequestBody @Valid User userData, Errors errors) {
+        if (errors.hasErrors()) {
+            String errorMessage = errors.getFieldError().getDefaultMessage();
+            if (errorMessage.contains("size must be between")) {
+                return "Username must be greater than 3 characters.";
+            } else if (errorMessage.contains("must not be null")) {
+                return "Username must not be null.";
+            }
+        }
         User newUser = new User();
         newUser.setUsername(userData.getUsername());
         userRepository.save(newUser);
