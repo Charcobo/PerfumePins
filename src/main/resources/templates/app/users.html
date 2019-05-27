@@ -5,8 +5,12 @@
 <h1 th:text="${title}">Default Title</h1>
 <nav th:replace="fragments :: nav"></nav>
 <p th:unless="${users} and ${users.size()}">Sorry, no users to display.</p>
-<ul>
-    <li th:each="user : ${users}" th:text="${user.getUsername()}"></li>
-</ul>
+
+<table class="table">
+    <tr th:each="user : ${users}">
+        <td width="70"><img th:attr="src=@{'/images/users/' + ${user.getUsername()} + '.jpg'}" th:height="60"/></td>
+        <td th:text="${user.getUsername()}"></td>
+    </tr>
+</table>
 </body>
 </html>
