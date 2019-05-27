@@ -1,3 +1,8 @@
+/**
+ * @author Charlie Logan
+ * @date May 26, 2019
+ */
+
 package com.perfumepins.repository;
 
 import com.perfumepins.model.User;

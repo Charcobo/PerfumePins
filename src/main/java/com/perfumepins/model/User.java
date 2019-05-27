@@ -1,3 +1,8 @@
+/**
+ * @author Charlie Logan
+ * @date May 26, 2019
+ */
+
 package com.perfumepins.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
