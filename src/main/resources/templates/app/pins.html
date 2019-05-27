@@ -5,8 +5,12 @@
 <h1 th:text="${title}">Default Title</h1>
 <nav th:replace="fragments :: nav"></nav>
 <p th:unless="${pins} and ${pins.size()}">Sorry, no pins to display.</p>
-<ul>
-    <li th:each="pin : ${pins}" th:text="${pin.getPinName()}"></li>
-</ul>
+
+<table class="table">
+    <tr th:each="pin : ${pins}">
+        <td><img th:attr="src=@{'/images/' + ${pin.getPinId()} + '.jpg'}" th:height="60"/></td>
+        <td th:text="${pin.getPinName()}"></td>
+    </tr>
+</table>
 </body>
 </html>
