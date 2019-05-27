@@ -62,9 +62,9 @@ public class UserController {
             @RequestBody @Valid User userData, Errors errors) {
         if (errors.hasErrors()) {
             String errorMessage = errors.getFieldError().getDefaultMessage();
-            if (errorMessage.contains("size must be between")) {
+            if (errorMessage.equals("Username must be larger than 2 characters")) {
                 return "Username must be greater than 3 characters.";
-            } else if (errorMessage.contains("must not be null")) {
+            } else if (errorMessage.equals("Username must not be null")) {
                 return "Username must not be null.";
             }
         }

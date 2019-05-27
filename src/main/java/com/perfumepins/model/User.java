@@ -19,11 +19,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
 
-    @NotNull
-    @Size(min = 3)
+    @NotNull(message = "Username must not be null")
+    @Size(min = 3, message = "Username must be larger than 2 characters")
     @Column(unique = true)
     private String username;
-
+    
     @JsonIgnore
     @ManyToMany(cascade = { CascadeType.PERSIST })
     @JoinTable(
