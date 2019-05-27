@@ -1,0 +1,41 @@
+body {
+    font-family: sans-serif;
+    background-color: lightblue;
+}
+
+.tg {
+    border-collapse: collapse;
+    border-spacing: 10px;
+}
+
+.tg tr {
+    border-width: 1px;
+    border-style: solid;
+    border-color: cornflowerblue;
+}
+
+.tg td {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border-style: solid;
+    border-width: 0px;
+    padding: 10px 5px;
+    overflow: hidden;
+    word-break: normal;
+}
+
+.tg th {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 10px 5px;
+    border-style: solid;
+    border-width: 0px;
+    overflow: hidden;
+    word-break: normal;
+}
+
+.tg .tg-0lax {
+    text-align: left;
+    vertical-align: top
+}

@@ -4,6 +4,9 @@
 <body>
 <h1 th:text="${title}">Default Title</h1>
 <nav th:replace="fragments :: nav"></nav>
-<p>Welcome to the Perfume Pins app!</p>
+<p th:unless="${pins} and ${pins.size()}">Sorry, no pins to display.</p>
+<ul>
+    <li th:each="pin : ${pins}" th:text="${pin.getPinName()}"></li>
+</ul>
 </body>
 </html>
