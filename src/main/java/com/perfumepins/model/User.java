@@ -8,6 +8,8 @@ package com.perfumepins.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +18,10 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
+
+    @NotNull
+    @Size(min = 3)
+    @Column(unique = true)
     private String username;
 
     @JsonIgnore

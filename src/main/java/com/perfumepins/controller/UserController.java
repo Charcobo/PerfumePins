@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.*;
 
 @Controller
@@ -57,7 +58,7 @@ public class UserController {
     // Adds a user
     @PostMapping(value = "/add") //, consumes = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody String addUser(
-            @RequestBody User userData) {
+            @RequestBody @Valid User userData) {
         User newUser = new User();
         newUser.setUsername(userData.getUsername());
         userRepository.save(newUser);
