@@ -34,7 +34,7 @@ public class AppController {
     public String users(Model model) {
 
         List<User> users = userRepository.findAll();
-        String title = "Perfume Users";
+        String title = "Perfume Pins Users";
         model.addAttribute("users", users);
         model.addAttribute("title", title);
         return "app/users";
@@ -44,7 +44,7 @@ public class AppController {
     public String pins(Model model) {
 
         List<Pin> pins = pinRepository.findAll();
-        String title = "Perfume Pins";
+        String title = "Perfume Pins List";
         model.addAttribute("pins", pins);
         model.addAttribute("title", title);
         return "app/pins";
